@@ -1,0 +1,36 @@
+.footer {
+  padding: 80px 0;
+  text-align: center;
+  background: #fff;
+}
+
+.footer h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  letter-spacing: -0.03em;
+}
+
+.footer .italic-serif {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--brand-purple);
+}
+
+.footer .btn-pill {
+  background: var(--brand-purple);
+  padding: 16px 40px;
+  font-size: 1.1rem;
+}
+
+.footer .copyright {
+  margin-top: 60px;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer h2 {
+    font-size: 2rem;
+  }
+}

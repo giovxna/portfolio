@@ -1,0 +1,89 @@
+:root {
+  --bg: #FAFAFA;
+  --text-main: #18181B;
+  --text-light: #71717A;
+  --brand-purple: #C084FC;
+  --brand-orange: #FF6B4A;
+  --brand-lilac: #E9D5FF;
+  --brand-cream: #F3F4F6;
+  --brand-sage: #D1FAE5;
+  --brand-yellow: #FEF3C7;
+  --border: #E4E4E7;
+  --font-main: 'DM Sans', sans-serif;
+  --font-display: 'Playfair', serif;
+  --font-code: 'DM Mono', monospace;
+  --radius-xl: 40px;
+  --radius-md: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 {
+  transition-delay: 0.1s;
+}
+
+.stagger-2 {
+  transition-delay: 0.2s;
+}
+
+.stagger-3 {
+  transition-delay: 0.3s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
