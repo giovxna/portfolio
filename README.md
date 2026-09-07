@@ -1,38 +1,33 @@
-# Giovana | Portfólio
+# Giovana | Portfolio
 
-Portfólio pessoal de Giovana Siqueira, desenvolvedora backend.
+Personal portfolio of Giovana Siqueira, backend developer.
 
 ## Stack
 
-- **React 18** + **Vite** — build rápido, sem config desnecessária
+- **React 18** + **Vite** — fast builds, no unnecessary config
 - **Tailwind CSS v3** — utility-first, mobile-first
-- **Framer Motion** — animações de scroll e transições suaves
-- Fonte: **Poppins** (Google Fonts)
+- **React Router** — client-side routing
+- **Framer Motion** — scroll animations and smooth transitions
+- Font: **Poppins** (Google Fonts)
 
-## Como rodar
+## Running locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Acesse `http://localhost:5173`.
+Open `http://localhost:5173`.
 
-## Estrutura
+## Structure
 
 ```
 src/
-  components/    # Um arquivo por seção
-  data/          # Todo o conteúdo em portfolio.js — edite aqui
+  components/    # One file per section
+  pages/         # One file per route
+  data/          # All content lives in portfolio.js — edit here
   App.jsx
   index.css
 ```
 
-Para atualizar conteúdo (projetos, experiências, habilidades), edite apenas `src/data/portfolio.js`.
-
-## Próximos passos
-
-- Integrar com uma API (ex: GitHub API para listar repos reais)
-- Adicionar página de detalhes por projeto com roteamento (`react-router-dom`)
-- Formulário de contato com backend próprio (Node.js + Nodemailer)
-- Deploy na Vercel com CI via GitHub Actions
+To update content (projects, experience, skills), edit `src/data/portfolio.js` only.
