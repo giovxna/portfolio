@@ -1,6 +1,6 @@
 ﻿import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { footerLinks } from '../data/portfolio'
+import { footerLinks } from '../../data/navigation'
 
 export default function Footer() {
   return (

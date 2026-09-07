@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import { navLinks } from '../data/portfolio'
+import { navLinks } from '../../data/navigation'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
