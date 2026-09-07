@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    color: #0F0F0D;
+    background-color: #F7EFE2;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    opacity: 0.022;
+    pointer-events: none;
+    z-index: 9998;
+  }
+}
+
+@layer components {
+  /* Pílula amarela com texto preto, igual à referência */
+  .btn-pill {
+    background-color: #FEAE17;
+    color: #0F0F0D;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .btn-pill:hover {
+    background-color: #FE6138;
+    color: #F7EFE2;
+    transform: translateY(-2px);
+  }
+
+  /* Chip preto usado nas tags de projeto */
+  .chip-dark {
+    background-color: #0F0F0D;
+    color: #F7EFE2;
+  }
+}
