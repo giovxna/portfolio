@@ -68,8 +68,7 @@ function InfoCard() {
         <span
           className="font-bold tracking-tight text-[1.05rem] self-start"
           style={{
-            backgroundImage:
-              'linear-gradient(to top, #FEAE17 0, #FEAE17 9px, transparent 9px)',
+            backgroundImage: 'linear-gradient(to top, #FEAE17 0, #FEAE17 9px, transparent 9px)',
             WebkitBoxDecorationBreak: 'clone',
             boxDecorationBreak: 'clone',
           }}

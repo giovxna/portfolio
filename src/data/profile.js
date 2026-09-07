@@ -26,5 +26,5 @@ export const profileCard = {
     { label: 'Nascida em', value: 'São Paulo, Brasil' },
     { label: 'Idiomas', value: 'Português · Inglês' },
     { label: 'Fora do código', value: 'Música, leitura e arte' },
-  ]
+  ],
 }

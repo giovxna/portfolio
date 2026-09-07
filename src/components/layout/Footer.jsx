@@ -27,11 +27,19 @@ export default function Footer() {
       <div className="flex justify-center gap-x-6 gap-y-4 mt-10 md:mt-14 pt-8 md:pt-10 border-t border-white/10 flex-wrap">
         {footerLinks.map(({ label, href, to }) =>
           to ? (
-            <Link key={label} to={to} className="text-white/60 text-sm font-medium hover:text-white transition-colors duration-200">
+            <Link
+              key={label}
+              to={to}
+              className="text-white/60 text-sm font-medium hover:text-white transition-colors duration-200"
+            >
               {label}
             </Link>
           ) : (
-            <a key={label} href={href} className="text-white/60 text-sm font-medium hover:text-white transition-colors duration-200">
+            <a
+              key={label}
+              href={href}
+              className="text-white/60 text-sm font-medium hover:text-white transition-colors duration-200"
+            >
               {label}
             </a>
           )

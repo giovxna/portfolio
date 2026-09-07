@@ -21,20 +21,18 @@ function ExpItem({ item, index }) {
       >
         <div className="text-sm">
           <strong className="block font-semibold text-text-main mb-0.5">{item.period}</strong>
-          <span className="text-[0.68rem] font-bold uppercase tracking-widest text-text-light">{item.duration}</span>
+          <span className="text-[0.68rem] font-bold uppercase tracking-widest text-text-light">
+            {item.duration}
+          </span>
         </div>
 
-        <div className="font-semibold text-[1.1rem] tracking-tight self-center">
-          {item.company}
-        </div>
+        <div className="font-semibold text-[1.1rem] tracking-tight self-center">{item.company}</div>
 
         <div className="flex items-center justify-between md:justify-end gap-4 text-text-light text-sm">
           <span>{item.role}</span>
           <span
             className={`w-7 h-7 rounded-full border border-border flex items-center justify-center text-xs flex-shrink-0 transition-all duration-300 ${
-              open
-                ? 'rotate-180 bg-brand-green border-brand-green text-white'
-                : 'text-text-main'
+              open ? 'rotate-180 bg-brand-green border-brand-green text-white' : 'text-text-main'
             }`}
           >
             ↓
@@ -55,7 +53,10 @@ function ExpItem({ item, index }) {
             <div className="px-4 pt-4 pb-6 mx-4 border-t border-border">
               <ul className="flex flex-col gap-2.5 pt-2">
                 {item.bullets.map((bullet, i) => (
-                  <li key={i} className="flex items-baseline gap-3 text-sm text-text-light leading-relaxed">
+                  <li
+                    key={i}
+                    className="flex items-baseline gap-3 text-sm text-text-light leading-relaxed"
+                  >
                     <span className="text-brand-coral text-sm flex-shrink-0">✦</span>
                     {bullet}
                   </li>

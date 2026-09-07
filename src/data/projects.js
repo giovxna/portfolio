@@ -96,7 +96,8 @@ export const allProjects = [
     title: 'HealUs',
     description:
       'Plataforma de saúde preventiva com conteúdo sobre sono, autocuidado e hábitos saudáveis.',
-    image: 'https://raw.githubusercontent.com/giovxna/heal-us/main/public/assets/images/capa-heal-us.png',
+    image:
+      'https://raw.githubusercontent.com/giovxna/heal-us/main/public/assets/images/capa-heal-us.png',
     repo: 'https://github.com/giovxna/heal-us',
     size: 'large',
   },

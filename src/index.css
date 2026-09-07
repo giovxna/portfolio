@@ -6,8 +6,8 @@
   body {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    color: #0F0F0D;
-    background-color: #F7EFE2;
+    color: #0f0f0d;
+    background-color: #f7efe2;
   }
 
   body::after {
@@ -25,25 +25,27 @@
 @layer components {
   /* Pílula amarela com texto preto, igual à referência */
   .btn-pill {
-    background-color: #FEAE17;
-    color: #0F0F0D;
+    background-color: #feae17;
+    color: #0f0f0d;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
     font-weight: 600;
     font-size: 0.95rem;
     display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .btn-pill:hover {
-    background-color: #FE6138;
-    color: #F7EFE2;
+    background-color: #fe6138;
+    color: #f7efe2;
     transform: translateY(-2px);
   }
 
   /* Chip preto usado nas tags de projeto */
   .chip-dark {
-    background-color: #0F0F0D;
-    color: #F7EFE2;
+    background-color: #0f0f0d;
+    color: #f7efe2;
   }
 }
