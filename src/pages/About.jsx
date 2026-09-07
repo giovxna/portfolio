@@ -26,11 +26,16 @@ function ProfileCard({ data }) {
 
       <div className="bg-white">
         {data.rows.map(({ label, value, highlight }) => (
-          <div key={label} className="grid grid-cols-[100px_1fr] gap-4 px-7 py-4 border-b border-border last:border-b-0 items-center">
+          <div
+            key={label}
+            className="grid grid-cols-[100px_1fr] gap-4 px-7 py-4 border-b border-border last:border-b-0 items-center"
+          >
             <span className="text-[0.68rem] font-bold uppercase tracking-widest text-text-light">
               {label}
             </span>
-            <span className={`text-sm font-medium ${highlight ? 'text-brand-green' : 'text-text-main'}`}>
+            <span
+              className={`text-sm font-medium ${highlight ? 'text-brand-green' : 'text-text-main'}`}
+            >
               {value}
             </span>
           </div>
@@ -60,7 +65,6 @@ export default function About() {
               Aprendendo a construir, <br /> aprendendo a{' '}
               <em className=" text-brand-green">resolver</em>.
             </h1>
-            
           </motion.div>
 
           <ProfileCard data={profileCard} />
@@ -82,20 +86,20 @@ export default function About() {
               </span>
               inha história não começou num diploma, começou dissecando temas de Tumblr. Cresci na{' '}
               <strong className="text-text-main font-semibold">Zona Leste de São Paulo</strong>{' '}
-              desmontando layouts para descobrir por que aquilo funcionava. Essa curiosidade me levou
-              à <strong className="text-text-main font-semibold">SPTech</strong>, onde eu me encontrei
-              no backend e na arquitetura de software.
+              desmontando layouts para descobrir por que aquilo funcionava. Essa curiosidade me
+              levou à <strong className="text-text-main font-semibold">SPTech</strong>, onde eu me
+              encontrei no backend e na arquitetura de software.
             </p>
             <p>
               Foi no <strong className="text-text-main font-semibold">Itaú Unibanco</strong>, como
               estagiária em dados, que eu entendi o que significa escala. Trabalhei com pipelines de
-              ingestão e processamento em Python e AWS, e com controles de governança que garantiam a
-              qualidade dos indicadores usados nas decisões do banco.
+              ingestão e processamento em Python e AWS, e com controles de governança que garantiam
+              a qualidade dos indicadores usados nas decisões do banco.
             </p>
             <p>
               Hoje, na <strong className="text-text-main font-semibold">Webmotors</strong>, trabalho
-              nos serviços que ligam quem procura ao carro certo. No dia a dia desenvolvo APIs em C# e
-              .NET, cuido de arquiteturas em nuvem (estou estudando para a certificação AWS) e
+              nos serviços que ligam quem procura ao carro certo. No dia a dia desenvolvo APIs em C#
+              e .NET, cuido de arquiteturas em nuvem (estou estudando para a certificação AWS) e
               acompanho a saúde das nossas Lambdas no Datadog. Não considero uma entrega pronta só
               porque subiu para produção. Ela precisa performar bem e se manter estável.
             </p>
@@ -106,7 +110,8 @@ export default function About() {
           </div>
 
           <blockquote className="border-l-2 border-brand-coral pl-6 md:pl-8 font-serif italic text-[clamp(1.4rem,3vw,1.8rem)] text-text-main leading-snug self-start mt-4">
-            "Entrei na área querendo impactar a vida de outras pessoas com criações próprias e criativas."
+            “Entrei na área querendo impactar a vida de outras pessoas com criações próprias e
+            criativas.”
           </blockquote>
         </motion.div>
       </section>

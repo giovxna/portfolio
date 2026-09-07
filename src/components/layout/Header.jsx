@@ -1,21 +1,17 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { navLinks } from '../../data/navigation'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  // fecha o menu ao navegar
-  useEffect(() => setMenuOpen(false), [pathname])
 
   return (
     <motion.header
@@ -93,11 +89,13 @@ export default function Header() {
             className="md:hidden overflow-hidden"
           >
             <div className="px-5 pt-6 pb-1 flex flex-col gap-5 border-t border-border mt-5">
+              {/* fecha o menu ao escolher um destino */}
               {navLinks.map(({ label, to }) => (
                 <NavLink
                   key={label}
                   to={to}
                   end={to === '/'}
+                  onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
                     `text-base font-medium transition-colors duration-200 ${
                       isActive ? 'text-text-main' : 'text-text-light'
