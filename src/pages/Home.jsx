@@ -1,15 +1,15 @@
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Projects from '../components/Projects'
-import Experience from '../components/Experience'
+import Hero from '../components/sections/Hero'
+import AboutSection from '../components/sections/AboutSection'
+import ProjectsSection from '../components/sections/ProjectsSection'
+import ExperienceSection from '../components/sections/ExperienceSection'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Projects />
-      <Experience />
+      <AboutSection />
+      <ProjectsSection />
+      <ExperienceSection />
     </>
   )
 }

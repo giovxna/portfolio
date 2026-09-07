@@ -1,6 +1,7 @@
 ﻿import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { experience } from '../data/portfolio'
+import { MotionSectionTitle } from '../ui/SectionTitle'
+import { experience } from '../../data/experience'
 
 function ExpItem({ item, index }) {
   const [open, setOpen] = useState(false)
@@ -68,19 +69,19 @@ function ExpItem({ item, index }) {
   )
 }
 
-export default function Experience() {
+export default function ExperienceSection() {
   return (
     <section id="experience" className="py-14 md:py-20">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <motion.h2
-          className="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tight leading-tight mb-10 md:mb-14"
+        <MotionSectionTitle
+          className="mb-10 md:mb-14"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           Experiência
-        </motion.h2>
+        </MotionSectionTitle>
 
         <div className="border-t border-border">
           {experience.map((item, index) => (

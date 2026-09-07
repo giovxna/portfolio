@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { heroCard } from '../data/portfolio'
+import { heroCard } from '../../data/profile'
+import { MotionBadge } from '../ui/Badge'
 
 const container = {
   hidden: {},
@@ -120,12 +121,9 @@ export default function Hero() {
         className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-16 items-center"
       >
         <div className="min-w-0">
-          <motion.span
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 text-text-main bg-brand-yellow text-sm font-semibold px-4 py-2 rounded-full mb-7"
-          >
-            ✦ Portfólio 2026
-          </motion.span>
+          <MotionBadge variants={fadeUp} className="mb-7">
+            Portfólio 2026
+          </MotionBadge>
 
           <motion.h1
             variants={fadeUp}
