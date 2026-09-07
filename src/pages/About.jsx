@@ -1,5 +1,6 @@
 ﻿import { motion } from 'framer-motion'
-import { profileCard } from '../data/portfolio'
+import { profileCard } from '../data/profile'
+import Badge from '../components/ui/Badge'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -54,9 +55,7 @@ export default function About() {
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
         >
           <motion.div variants={fadeUp}>
-            <span className="inline-flex items-center gap-2 text-text-main bg-brand-yellow text-sm font-semibold px-4 py-2 rounded-full mb-8">
-              ✦ A pessoa por trás dos commits
-            </span>
+            <Badge className="mb-8">A pessoa por trás dos commits</Badge>
             <h1 className="text-[clamp(2rem,7vw,5rem)] font-extrabold tracking-tight leading-tight mb-6">
               Aprendendo a construir, <br /> aprendendo a{' '}
               <em className=" text-brand-green">resolver</em>.

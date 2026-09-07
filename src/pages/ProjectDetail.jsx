@@ -1,21 +1,14 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { projectDetails, allProjects } from '../data/portfolio'
+import { projectDetails, allProjects } from '../data/projects'
+import { MotionBadge } from '../components/ui/Badge'
+import SectionTitle from '../components/ui/SectionTitle'
+import ImageFallback from '../components/ui/ImageFallback'
+import ProjectCard from '../components/ui/ProjectCard'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-}
-
-// bloco usado quando o projeto não tem imagem própria, no mesmo padrão da listagem
-function ImagemFallback({ texto, className }) {
-  return (
-    <div
-      className={`w-full flex items-center justify-center font-semibold text-xl text-text-main bg-brand-yellow ${className}`}
-    >
-      {texto}
-    </div>
-  )
 }
 
 export default function ProjectDetail() {
@@ -39,12 +32,9 @@ export default function ProjectDetail() {
         animate="show"
         variants={{ show: { transition: { staggerChildren: 0.1 } } }}
       >
-        <motion.span
-          variants={fadeUp}
-          className="inline-flex items-center gap-2 text-text-main bg-brand-yellow text-sm font-semibold px-4 py-2 rounded-full mb-8"
-        >
-          ✦ {naListagem?.tag ?? 'Estudo de caso'}
-        </motion.span>
+        <MotionBadge variants={fadeUp} className="mb-8">
+          {naListagem?.tag ?? 'Estudo de caso'}
+        </MotionBadge>
 
         <motion.h1
           variants={fadeUp}
@@ -92,7 +82,7 @@ export default function ProjectDetail() {
         {project.mainImage ? (
           <img src={project.mainImage} alt={project.title} className="w-full" />
         ) : (
-          <ImagemFallback texto={project.imageFallback} className="h-44 md:h-60" />
+          <ImageFallback className="h-44 md:h-60">{project.imageFallback}</ImageFallback>
         )}
       </motion.div>
 
@@ -173,9 +163,7 @@ export default function ProjectDetail() {
       {outros.length > 0 && (
         <section className="mb-16 md:mb-24">
           <div className="flex justify-between items-end gap-4 mb-10 md:mb-14">
-            <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tight leading-tight">
-              Outros Projetos
-            </h2>
+            <SectionTitle>Outros Projetos</SectionTitle>
             <Link
               to="/projects"
               className="text-sm font-semibold text-text-light hover:text-text-main transition-colors border-b border-text-light hover:border-text-main pb-0.5"
@@ -186,30 +174,13 @@ export default function ProjectDetail() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {outros.map((p) => (
-              <Link
+              <ProjectCard
                 key={p.id}
+                project={p}
                 to={`/projects/${p.id}`}
-                className="bg-white p-3 rounded-[40px] border border-border group hover:-translate-y-1.5 hover:shadow-[0_24px_48px_rgba(52,76,54,0.14)] hover:border-brand-yellow transition-all duration-500 block"
-              >
-                <div className="rounded-[28px] overflow-hidden h-56 md:h-64 mb-6 bg-brand-cream-dark">
-                  {p.image ? (
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  ) : (
-                    <ImagemFallback texto={p.imageFallback} className="h-full" />
-                  )}
-                </div>
-                <div className="px-3 pb-3">
-                  <span className="inline-block bg-text-main px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-cream mb-4">
-                    {p.tag}
-                  </span>
-                  <h3 className="text-[1.75rem] font-semibold tracking-tight mb-3">{p.title}</h3>
-                  <p className="text-text-light text-base leading-relaxed">{p.description}</p>
-                </div>
-              </Link>
+                imageHeight="h-56 md:h-64"
+                showAction={false}
+              />
             ))}
           </div>
         </section>
